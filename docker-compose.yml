@@ -1,4 +1,4 @@
-version: '3.9'
+version: '2'
 
 services:
    db:
@@ -7,10 +7,10 @@ services:
        - db_data:/var/lib/mysql
      restart: always
      environment:
-       MYSQL_ROOT_PASSWORD: db4ass
+       MYSQL_ROOT_PASSWORD: somewordpress
        MYSQL_DATABASE: wordpress
-       MYSQL_USER: devjota
-       MYSQL_PASSWORD: db_my_sql_pa4$$
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
 
    wordpress:
      depends_on:
@@ -21,7 +21,10 @@ services:
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: portalJT
-       WORDPRESS_DB_PASSWORD: passjotaword
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+     volumes:
+        - ./wordpress:/var/www/html/
+        - ./src/wp-content:/var/www/html/wp-content
 volumes:
     db_data:
