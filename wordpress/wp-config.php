@@ -39,7 +39,7 @@ if (!function_exists('getenv_docker')) {
 	}
 }
 
-define('JWT_AUTH_SECRET_KEY', 'CRpR9W7G78l^$VGiSc');
+define('JWT_AUTH_SECRET_KEY', bin2hex(random_bytes(32)));  // 64 caracteres hexadecimais
 define('JWT_AUTH_CORS_ENABLE', true);
 
 // ** Database settings - You can get this info from your web host ** //
