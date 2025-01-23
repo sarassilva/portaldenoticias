@@ -32,7 +32,7 @@ const EditForm = ({ slug }) => {
         throw new Error("Post não encontrado");
       }
 
-      const post = data[0]; // O primeiro item da lista corresponde ao slug
+      const post = data[0]; 
 
       setPostData({
         title: post.title.rendered || "",

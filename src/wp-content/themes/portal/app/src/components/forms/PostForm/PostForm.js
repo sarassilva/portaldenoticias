@@ -18,15 +18,16 @@ const CreatePostForm = ({ initialData = {} }) => {
                 ? await uploadFeaturedImage(featuredImage)
                 : null;
 
-            const postData = {
-                title: title,
-                content: content,
-                status: status,
-                featured_media: featuredImageId,
-            };
-
-            const response = await createPost(postData);
-            navigate('/editar-post/' + response.id);
+                const postData = {
+                    title: title,
+                    content: content,
+                    status: status,
+                    featured_media: featuredImageId,
+                    slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
+                };
+    
+                const response = await createPost(postData);
+                navigate('/post/' + response.slug);
         } catch (error) {
             console.error("Erro ao criar post:", error);
         }
@@ -54,22 +55,16 @@ const CreatePostForm = ({ initialData = {} }) => {
             </div>
 
             <div>
-                <label htmlFor="featuredImage">Imagem Destacada:</label>
-                <input
-                    type="file"
-                    id="featuredImage"
-                    onChange={(e) => setFeaturedImage(e.target.files[0])}
-                />
-            </div>
-
-            <div>
                 <label htmlFor="status">Status:</label>
                 <select
                     id="status"
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                 >
+                    <option value="draft">Rascunho</option>
                     <option value="publish">Publicado</option>
+                    <option value="pending">Pendente</option>
+                    <option value="private">Privado</option>
                 </select>
             </div>
 
