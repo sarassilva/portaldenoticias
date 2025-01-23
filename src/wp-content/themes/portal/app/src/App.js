@@ -23,7 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/painel" element={ <ProtectedRoute> <Painel /> </ProtectedRoute>} />
           <Route path="/criar-post" element={<ProtectedRoute> <PageCreatePost /> </ProtectedRoute>} />
-          <Route path="/editar/:slug" element={<ProtectedRoute> <PageEditPost /> </ProtectedRoute>} />
+          <Route path="/painel/editar/:slug" element={<ProtectedRoute> <PageEditPost /> </ProtectedRoute>} />
           <Route path="/post/:slug" element={<SinglePost />} />
       </Routes>
       <Footer />

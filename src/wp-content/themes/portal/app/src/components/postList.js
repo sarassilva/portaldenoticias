@@ -42,24 +42,25 @@ const PostsList = ({ isPanel = false, isLoggedIn = false }) => {
         fetchPosts();
     }, []);
 
-    const deletePost = async (id) => {
+    const deletePost = async (postId) => {
         try {
-            const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/posts/${postId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
-                }
+                    Authorization: `Bearer ${localStorage.getItem("token")}`, 
+                },
             });
-
-            if (response.ok) {
-                alert("Post deletado com sucesso!");
-                setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id)); 
-                navigate("/painel");
-            } else {
-                alert("Erro ao deletar post.");
+    
+            if (!response.ok) {
+                throw new Error(`Erro ao deletar o post: ${response.status}`);
             }
+    
+            const data = await response.json();
+            console.log("Post deletado com sucesso:", data);
+            window.location.reload();
         } catch (error) {
-            console.error("Erro ao deletar post:", error);
+            console.error("Erro ao deletar o post:", error.message);
         }
     };
 
@@ -75,7 +76,7 @@ const PostsList = ({ isPanel = false, isLoggedIn = false }) => {
 
                         {isPanel && isLoggedIn && (
                             <div className="post-actions">
-                                <button className="btn edit-btn" onClick={() => navigate(`/editar/${post.slug}`)}>Editar</button>
+                                <button className="btn edit-btn" onClick={() => navigate(`/painel/editar/${post.slug}`)}>Editar</button>
                                 <button className="btn delete-btn" onClick={() => deletePost(post.id)}>Deletar</button>
                             </div>
                         )}

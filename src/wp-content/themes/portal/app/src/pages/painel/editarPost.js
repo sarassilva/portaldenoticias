@@ -2,13 +2,13 @@ import { useParams } from "react-router-dom";
 import EditPostForm from "../../components/forms/PostForm/EditForm";
 
 const PageEditPost = () => {
-    const { id } = useParams();
+    const { slug } = useParams();
 
     return (
         <div className="painel post-form">
             <div className="container">
-                <h1>Criar novo post</h1>
-                <EditPostForm id={id} />
+                <h1>Editar </h1>
+                <EditPostForm slug={slug} />
             </div>
         </div>
     );
