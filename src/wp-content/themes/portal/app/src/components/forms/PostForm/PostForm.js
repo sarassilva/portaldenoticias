@@ -69,10 +69,7 @@ const CreatePostForm = ({ initialData = {} }) => {
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                 >
-                    <option value="draft">Rascunho</option>
                     <option value="publish">Publicado</option>
-                    <option value="pending">Pendente</option>
-                    <option value="private">Privado</option>
                 </select>
             </div>
 
