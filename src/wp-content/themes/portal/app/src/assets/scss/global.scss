@@ -1,0 +1,81 @@
+//imports
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import './vars/vars.scss';
+
+//geral
+html, body, div, span, h2, h3, blockquote, pre, a, code, em, font, img, small, strong, b, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td { 
+	margin: 0; 
+	border: 0; 
+	outline: 0; 
+}
+
+*{ 
+	outline: none; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+fieldset { 
+	border: 0; 
+	margin: 0; 
+	padding: 0; 
+}
+
+body {
+    background-color: #fff;
+    font-family: "Inter", serif;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+    transition: all 0.2s linear;
+
+    &:hover {
+        color: $main-color;
+        transition: all 0.2s linear;
+    }
+}
+
+//buttons
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: $main-color;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    font-size: 14px;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: all 0.2s linear;
+        color: #fff;
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+//titles
+h1 {
+    font-weight: 700;
+    color: #222;
+    font-size: 40px;
+    margin-bottom: 20px;
+
+    @media(max-width: 768px) {
+        font-size: 24px;
+    }
+}

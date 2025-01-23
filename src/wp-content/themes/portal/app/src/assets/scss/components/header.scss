@@ -1,0 +1,103 @@
+@import '../vars/vars.scss';
+
+header {
+    padding: 10px 0 0;
+    
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 40px;        
+    }
+
+    .logo {
+        font-weight:700;
+        text-transform: uppercase;
+        color: $main-color;
+    }
+
+    .search {
+        border: 1px solid $light-color;
+        padding: 6px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+
+        input[type=text] {
+            border: 0;
+            background-color: transparent;
+        }
+
+        button {
+            padding: 0;
+            border: 0;
+            color: $main-color;
+            background-color: transparent;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    .simple-buttons {
+        margin-left: auto;
+
+        .flex-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .simple-link {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $secundary-color;
+            font-size: 13px;
+            border: 0;
+            background-color: transparent;
+            padding: 0;
+            cursor: pointer;
+            line-height: 15px;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }    
+
+    nav {
+        border-top: 1px solid $light-color;
+        border-bottom: 1px solid $light-color;
+        padding: 15px 0;
+        margin-top: 15px;
+
+        ul {
+            padding:0;
+            display: flex;
+            gap: 10px 0;
+            justify-content: center;
+            gap: 20px;
+
+            li {
+                list-style: none;
+
+                a {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 14px;
+
+                    &:hover {
+                        color: $secundary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 789px) {
+        padding: 20px 0;
+        border-bottom: 1px solid $light-color;
+
+        .search, nav {
+            display: none;
+        }
+    }
+}

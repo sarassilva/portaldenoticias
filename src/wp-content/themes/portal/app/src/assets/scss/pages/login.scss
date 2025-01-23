@@ -1,0 +1,40 @@
+@import '../vars/vars.scss';
+@import '../components/forms.scss';
+
+.login {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2e1ff47;
+
+    .login__container {
+        max-width: 500px;
+        width: 90%;
+        margin: auto;
+
+        .login-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 3px 4px 10px #c2c2dd;
+
+            .links {
+                padding: 0;
+                font-size: 13px;
+
+                li {
+                    list-style: none;
+                    padding: 5px 0 0;
+
+                    a {
+                        font-size: 13px;
+                    }
+                }
+            }            
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@import '../vars/vars.scss';
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    label {
+        font-size: 13px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        border: 1px solid $light-color;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    button {
+        padding: 15px;
+        border: 0;
+        background-color: $main-color;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: all 0.2s linear;
+
+        &:hover {
+            transform: scale(1.02);
+            transition: all 0.2s linear;
+        }
+    }
+}
+
+.post-form {
+    padding: 80px 0;
+    
+    .container {
+        max-width: 1000px;
+    }
+}

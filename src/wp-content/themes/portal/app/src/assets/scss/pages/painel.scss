@@ -1,0 +1,15 @@
+@import '../vars/vars.scss';
+
+.painel {
+    margin: 40px 0;
+
+    .painel__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            margin: 0;
+        }
+    }
+}
